@@ -15,8 +15,3 @@ class Robot:
         self.weapons.append(Weapon('Photon cannon',10))
         self.weapons.append(Weapon('Plasma Gun', 15))
         self.weapons.append(Weapon('minigun', 30))
-    
-dino = 20
-test_robot = Robot('')
-dino = test_robot.attack(dino)
-print(dino)
