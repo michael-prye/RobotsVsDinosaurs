@@ -7,3 +7,4 @@ class Herd:
         self.dinosaurs.append(Dinosaur('Velociraptor', 50, 10))
         self.dinosaurs.append(Dinosaur('Stegosaurus', 75, 15))
         self.dinosaurs.append(Dinosaur('T-rex', 100, 20))
+   

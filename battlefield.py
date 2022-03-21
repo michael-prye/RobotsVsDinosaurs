@@ -1,5 +1,7 @@
+import random
 from fleet import Fleet
 from herd import Herd
+
 class Battlefield:
     def __init__(self):
         self.fleet = Fleet()
@@ -7,12 +9,14 @@ class Battlefield:
     def run_game(self):
         pass
     def display_welcome(self):
-        pass
+        print('Welcome to Robots Versus Dinosaurs!')
+        print('----------')
     def battle(self):
+                
         pass
-    def dino_turn(self,dinosaur):
+    def dino_turn(self,):
         pass
-    def robo_turn(self, robot):
+    def robo_turn(self,):
         pass
     def show_dino_opponet_options(self):
         pass
@@ -20,3 +24,7 @@ class Battlefield:
         pass
     def display_winners(self):
         pass
+        
+
+test = Battlefield()
+test.battle()
