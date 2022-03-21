@@ -1,7 +1,9 @@
+from fleet import Fleet
+from herd import Herd
 class Battlefield:
     def __init__(self):
-        self.fleet = None
-        self.heard = None
+        self.fleet = Fleet()
+        self.heard = Herd()
     def run_game(self):
         pass
     def display_welcome(self):
