@@ -1,4 +1,5 @@
 from weapon import Weapon
+from dinosaur import Dinosaur
 
 class Robot:
     def __init__(self, name,health):
@@ -9,8 +10,8 @@ class Robot:
         
         
     def attack(self, dinosaur):
-        dinosaur -= self.weapons[0].attack_power
-        return dinosaur
+        dinosaur.health -= self.weapons[0].attack_power
+        
     def create_weapons(self):
         self.weapons.append(Weapon('Photon cannon',10))
         self.weapons.append(Weapon('Plasma Gun', 15))
