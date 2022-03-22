@@ -64,8 +64,8 @@ class Battlefield:
         pass
     def display_winners(self):
         if len(self.heard.dinosaurs) == 0:
-            print('The Robots won!')
+            print('The Robots win!')
         elif len(self.fleet.robots) == 0:
-            print('The Dinosaurs won!')
+            print('The Dinosaurs win!')
     def coin_toss(self):
         return random.choice(['Heads','Tails'])

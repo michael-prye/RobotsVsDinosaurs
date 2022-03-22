@@ -12,11 +12,11 @@ class Robot:
         self.display_weapons()
         user_input= int(input('Enter weapon selection: '))
         dinosaur.health -= self.weapons[user_input].attack_power
-    
         print(f'{dinosaur.name} was hit with {self.weapons[user_input].attack_power} damage')
+        print('----------')
     def create_weapons(self):
         self.weapons.append(Weapon('Photon cannon',10))
-        self.weapons.append(Weapon('Plasma Gun', 15))
+        self.weapons.append(Weapon('Plasma Gun', 20))
         self.weapons.append(Weapon('minigun', 30))
     def display_weapons(self):
         print('Robot Weapons:')
