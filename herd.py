@@ -4,7 +4,10 @@ class Herd:
         self.dinosaurs = []
         self.create_herd()
     def create_herd(self):
-        self.dinosaurs.append(Dinosaur('Velociraptor', 50, 10))
-        self.dinosaurs.append(Dinosaur('Stegosaurus', 75, 15))
-        self.dinosaurs.append(Dinosaur('T-rex', 100, 20))
-   
+        self.dinosaurs.append(Dinosaur('Velociraptor', 50, 10, 50))
+        self.dinosaurs.append(Dinosaur('Stegosaurus', 75, 15, 50))
+        self.dinosaurs.append(Dinosaur('T-rex', 100, 20, 50))
+    def display_stats(self):
+        print('Current Dinosaur Herd:')
+        for i in range(len(self.dinosaurs)):
+            print(f'{i}. {self.dinosaurs[i].name} ({self.dinosaurs[i].health} health, {self.dinosaurs[i].energy} energy)')

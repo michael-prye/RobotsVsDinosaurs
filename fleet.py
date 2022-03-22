@@ -4,6 +4,10 @@ class Fleet:
         self.robots = []
         self.create_fleet()
     def create_fleet(self):
-        self.robots.append(Robot('T-800', 50))
-        self.robots.append(Robot('Android', 75))
-        self.robots.append(Robot('Megatron', 100))
+        self.robots.append(Robot('T-800', 50,50))
+        self.robots.append(Robot('Android', 75,50))
+        self.robots.append(Robot('Megatron', 100,50))
+    def display_stats(self):
+        print('Current Robot Fleet: ')
+        for i in range(len(self.robots)):
+            print(f'{i}. {self.robots[i].name} ({self.robots[i].health} health, {self.robots[i].power} power)')

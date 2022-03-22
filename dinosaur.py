@@ -1,7 +1,8 @@
 class Dinosaur:
-    def __init__(self, name, health, attack_power):
+    def __init__(self, name, health, attack_power, energy):
         self.name = name
         self.health = health
         self.attack_power = attack_power
+        self.energy = energy
     def attack(self, robot):
         robot.health -= self.attack_power
