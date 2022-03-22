@@ -43,6 +43,8 @@ class Battlefield:
     def dino_turn(self,):
         self.heard.display_stats()
         attacker = int(input('Select the dinosaur to attack with: '))
+        while self.heard.dinosaurs[attacker].energy <= 0:
+            attacker = int(input('That Dinosaur has no energy left. Choose another dinosaur : '))
         self.fleet.display_stats()
         defender = int(input('Select robot to defend: '))
         self.heard.dinosaurs[attacker].attack(self.fleet.robots[defender])
@@ -52,6 +54,8 @@ class Battlefield:
     def robo_turn(self):
         self.fleet.display_stats()
         attacker = int(input('Select the robot to attack with: '))
+        while self.fleet.robots[attacker].power <= 0:
+            attacker = int(input('That robot has no power left. Choose another robot: '))
         self.heard.display_stats()
         defender = int(input('Select dinosaur to defend: '))
         self.fleet.robots[attacker].attack(self.heard.dinosaurs[defender])

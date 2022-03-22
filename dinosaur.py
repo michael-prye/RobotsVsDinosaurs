@@ -10,6 +10,7 @@ class Dinosaur:
         self.display_attacks()
         user_input = int(input('Enter Atack style: '))
         robot.health -= self.attacks[user_input].attack_power
+        self.energy -= 10
         print(f'{robot.name} was hit with {self.attacks[user_input].attack_power} damage')
         print('----------')
     def create_attacks(self):
