@@ -7,7 +7,9 @@ class Battlefield:
         self.fleet = Fleet()
         self.heard = Herd()
     def run_game(self):
-        pass
+        self.display_welcome()
+        self.battle()
+        self.display_winners()
     def display_welcome(self):
         print('Welcome to Robots Versus Dinosaurs!')
         print('----------')
@@ -24,17 +26,17 @@ class Battlefield:
             if coin_toss == 'Heads':
                 self.robo_turn()
                 if len(self.heard.dinosaurs) == 0:
-                    winner = True
+                    return
                 self.dino_turn()
                 if len(self.fleet.robots) == 0:
-                    winner = True
+                    return
             else:
                 self.dino_turn()
                 if len(self.fleet.robots) == 0:
-                    winner = True
+                    return
                 self.robo_turn()
                 if len(self.heard.dinosaurs) == 0:
-                    winner = True
+                    return
             round += 1
         self.display_winners()
         
@@ -42,14 +44,20 @@ class Battlefield:
         self.heard.display_stats()
         attacker = int(input('Select the dinosaur to attack with: '))
         self.fleet.display_stats()
-        defender = int(input('Select robot to defend'))
+        defender = int(input('Select robot to defend: '))
         self.heard.dinosaurs[attacker].attack(self.fleet.robots[defender])
+        if self.fleet.robots[defender].health <= 0:
+            print(f'{self.fleet.robots[defender].name} has fainted')
+            self.fleet.robots.pop(defender)
     def robo_turn(self):
         self.fleet.display_stats()
         attacker = int(input('Select the robot to attack with: '))
         self.heard.display_stats()
         defender = int(input('Select dinosaur to defend: '))
         self.fleet.robots[attacker].attack(self.heard.dinosaurs[defender])
+        if self.heard.dinosaurs[defender].health <= 0:
+            print(f'{self.heard.dinosaurs[defender].name} has fainted')
+            self.heard.dinosaurs.pop(defender)
     def show_dino_opponet_options(self): #robot stats
         pass
     def show_robo_opponet_options(self): # dino stats
@@ -61,7 +69,3 @@ class Battlefield:
             print('The Dinosaurs won!')
     def coin_toss(self):
         return random.choice(['Heads','Tails'])
-        
-
-test = Battlefield()
-test.battle()
