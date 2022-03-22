@@ -38,7 +38,7 @@ class Battlefield:
                 if len(self.heard.dinosaurs) == 0:
                     return
             round += 1
-        self.display_winners()
+        
         
     def dino_turn(self,):
         self.heard.display_stats()
@@ -62,10 +62,6 @@ class Battlefield:
         if self.heard.dinosaurs[defender].health <= 0:
             print(f'{self.heard.dinosaurs[defender].name} has fainted')
             self.heard.dinosaurs.pop(defender)
-    def show_dino_opponet_options(self): #robot stats
-        pass
-    def show_robo_opponet_options(self): # dino stats
-        pass
     def display_winners(self):
         if len(self.heard.dinosaurs) == 0:
             print('The Robots win!')
